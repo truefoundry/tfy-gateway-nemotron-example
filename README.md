@@ -31,7 +31,7 @@ Then just ask Claude to apply the gateway config and deploy the service.
 ## Setup
 
 ### 1. Get an NVIDIA API key
-Sign up at [build.nvidia.com](https://build.nvidia.com) → avatar → **Get API Key**
+Sign up at [build.nvidia.com](https://build.nvidia.com/nvidia/nemotron-3-super-120b-a12b) → avatar → **Get API Key**
 
 ### 2. Store secrets
 Dashboard → **Secrets** → create a secret group → add your NVIDIA API key.
