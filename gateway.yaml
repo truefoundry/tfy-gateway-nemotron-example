@@ -1,12 +1,10 @@
-# Registers NVIDIA's hosted API as a self-hosted model provider on TrueFoundry AI Gateway.
-# This adds Nemotron Super and Nano as models accessible through the gateway.
-#
+# Registers Nemotron 3 Super and Nano on TrueFoundry AI Gateway.
 # Docs: https://docs.truefoundry.com/gateway/quick-start
 #
 # Usage:
 #   tfy apply -f gateway.yaml
 
-name: nvidia-nim
+name: nvidia
 type: provider-account/self-hosted-model
 integrations:
   - name: nemotron-super
