@@ -1,0 +1,38 @@
+# Registers NVIDIA's hosted API as a self-hosted model provider on TrueFoundry AI Gateway.
+# This adds Nemotron Super and Nano as models accessible through the gateway.
+#
+# Docs: https://docs.truefoundry.com/gateway/quick-start
+#
+# Usage:
+#   tfy apply -f gateway.yaml
+
+name: nvidia-nim
+type: provider-account/self-hosted-model
+integrations:
+  - name: nemotron-super
+    type: integration/model/self-hosted-model
+    url: https://integrate.api.nvidia.com/v1
+    model_server: openai-compatible
+    hosted_model_name: nvidia/nemotron-3-super-120b-a12b
+    model_types:
+      - chat
+    auth_data:
+      type: bearer-auth
+      # Store your NVIDIA API key as a TFY secret, reference it here.
+      # Docs: https://docs.truefoundry.com/docs/manage-secrets
+      bearer_token: "tfy-secret://<tenant>:<secret-group>:NVIDIA-API-KEY"
+    authorized_subjects:
+      - team:everyone
+
+  - name: nemotron-nano
+    type: integration/model/self-hosted-model
+    url: https://integrate.api.nvidia.com/v1
+    model_server: openai-compatible
+    hosted_model_name: nvidia/nemotron-3-nano-30b-a3b
+    model_types:
+      - chat
+    auth_data:
+      type: bearer-auth
+      bearer_token: "tfy-secret://<tenant>:<secret-group>:NVIDIA-API-KEY"
+    authorized_subjects:
+      - team:everyone
